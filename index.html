@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  </head>
+
+  <body>
+
+    <div class="calculator">
+
+      <div class="display-section">
+
+        <div class="theme-switch">
+          <span class="material-symbols-outlined"> dark_mode </span>
+          <span class="material-symbols-outlined"> light_mode </span>
+        </div>
+
+        <p class="display display-for-input"></p>
+        <p class="display display-for-output"></p>
+
+      </div>
+
+      <div class="keys-section">
+
+        <div class="keys">
+
+            <button onclick="clearDisplay()" class="clear-all"> C </button>
+
+            <button onclick="backspace()" class="backspace">
+              <img src="backspace.svg" alt="⌫">
+            </button>
+            
+            <button onclick="validateInput('/')" class="operations"> ÷ </button>
+            <button onclick="validateInput('*')" class="operations"> × </button>
+            <button onclick="validateInput('7')"> 7 </button>
+            <button onclick="validateInput('8')"> 8 </button>
+            <button onclick="validateInput('9')"> 9 </button>
+
+            <button onclick="validateInput('-')" class="operations"> − </button>
+            <button onclick="validateInput('4')"> 4 </button>
+            <button onclick="validateInput('5')"> 5 </button>
+            <button onclick="validateInput('6')"> 6 </button>
+
+            <button onclick="validateInput('+')" class="operations"> + </button>
+            <button onclick="validateInput('3')"> 3 </button>
+            <button onclick="validateInput('2')"> 2 </button>
+            <button onclick="validateInput('1')"> 1 </button>
+            
+            <button onclick="equal()" class="equal"> = </button>
+            <button onclick="validateInput('0')" class="zero"> 0 </button>
+            <button onclick="validateInput('.')"> . </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    
+  <script src="script.js"></script>
+
+  </body>
+
+</html>

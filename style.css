@@ -206,8 +206,8 @@ button {
 @media screen and (max-width: 500px) {
 
   .calculator{
-    height: 80vh;
-    width: 90vw;
+    height: 80%;
+    width: 90%;
   }
 
   button{

@@ -1,42 +1,26 @@
 const inputDisplay = document.querySelector('.display-for-input');
 const outputDisplay = document.querySelector('.display-for-output');
 const themeSwitchBtn = document.querySelector('.theme-switch');
-const rootElement  = document.documentElement;
+const calculator = document.querySelector('.calculator')
 
 let expression = '';
 const operators = ['+', '-', '*', '/',];
 
+let enableLightMode = () => localStorage.setItem('dark-mode','inactive')
+let enableDarkMode = () => localStorage.setItem('dark-mode','active')
+
 themeSwitchBtn.addEventListener('click', switchTheme);
 
 function switchTheme() {
-    themeSwitchBtn.classList.toggle('light')
-    themeSwitchBtn.classList.contains('light') ? enableLightMode() : enableDarkMode();
-}
-    
-function enableDarkMode() {
-
-    themeSwitchBtn.firstElementChild.style.display = 'none'
-    themeSwitchBtn.lastElementChild.style.display = 'block'
-    themeSwitchBtn.style.color = '#fff';
-    themeSwitchBtn.style.backgroundColor = '#303136';
-    rootElement.style.setProperty('--calculator-color', '#17181A');
-    rootElement.style.setProperty('--display-text-color', '#fff');
-    rootElement.style.setProperty('--numbers-btn-color','#303136');
-    rootElement.style.setProperty('--numbers-text-color', '#fff')
-    rootElement.style.setProperty('--numbers-btn-active-color', '#2b2b2b')
+    calculator.classList.toggle('light-theme')
+    calculator.classList.contains('light-theme') ? enableLightMode() : enableDarkMode();
 }
 
-function enableLightMode() {
-    
-    themeSwitchBtn.firstElementChild.style.display = 'block'
-    themeSwitchBtn.lastElementChild.style.display = 'none'
-    themeSwitchBtn.style.color = 'black'
-    themeSwitchBtn.style.backgroundColor = '#fff'
-    rootElement.style.setProperty('--calculator-color', '#f2f2f2');
-    rootElement.style.setProperty('--display-text-color', '#333');
-    rootElement.style.setProperty('--numbers-btn-color','#f7f7f7');
-    rootElement.style.setProperty('--numbers-text-color', '#333')
-    rootElement.style.setProperty('--numbers-btn-active-color', '#eeecec')
+window.onload = () =>  {
+    let darkMode = localStorage.getItem('dark-mode');
+    darkMode == 'active' 
+        ? calculator.classList.remove('light-theme') 
+        : calculator.classList.add('light-theme');
 }
 
 function isOperator(input) {

@@ -8,7 +8,7 @@
     -webkit-tap-highlight-color: transparent; 
   }
 
-:root{
+:root {
   --calculator-color : #17181A;
   --numbers-btn-color : #303136;                          
   --numbers-text-color : #fff;
@@ -16,6 +16,14 @@
   --display-text-color : #fff;
 }
 
+.calculator.light-theme{
+  --calculator-color : #f2f2f2;
+  --numbers-btn-color : #f7f7f7;
+  --numbers-text-color : #333;
+  --numbers-btn-active-color : #eeecec;
+  --display-text-color : #333;
+}
+  
 body {
   display: flex;
   justify-content: center;
